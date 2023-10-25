@@ -4,8 +4,8 @@
         DECI    nb2, d          ; Lecture du deuxieme entier
 
 ; if (nb1 < nb2)
-if:     LDA     nb1, d
-        SUBA    nb2, d
+if:     LDA     nb1, d          ; Charement de la premiere valeur
+        SUBA    nb2, d          ; nb1 - nb2
         BRLT    nb2_in          ; La valeur est sous 0 donc nb1 < nb2
         BR      nb1_in          ; La valeur est toujours positive donc nb1 > nb2
 
