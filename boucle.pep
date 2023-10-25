@@ -4,7 +4,7 @@ FOR:     NOP0 ; Instruction 'pas d'instruction' pour aligner des commentaires
          ; Evaluer la condition
          LDA     iter, d     ; Charge la valeur stockee a l'emplacement memoire iter dans l'accumulateur
          CPA     n, d        ; Compare la valeur stockee a l'emplacement memoire n avec la valeur dans l'accumulateur
-         BREQ    ENDFOR      ; Saute a l'etiquette ENDFOR si les valeurs comparees sont �gales (si la condition de la boucle est satisfaite)
+         BREQ    ENDFOR      ; Saute a l'etiquette ENDFOR si les valeurs comparees sont egales (si la condition de la boucle est satisfaite)
 
          ; Afficher une message
          STRO    msg, d      
