@@ -15,5 +15,5 @@ succes: NEGA                    ; Transmformation de la valeur negative
 fin:    DECO    nb, d           ; Affichage du resultat
         STOP
 
-nb:     .Word   0
-        .End
+nb:     .WORD   0
+.END
