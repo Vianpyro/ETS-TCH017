@@ -27,8 +27,8 @@ fin:    STOP
 
 nb1:    .WORD   0
 nb2:    .WORD   0
-agemin: .WORD   15
-pdsmin: .WORD   40
+agemin: .EQUATE 15
+pdsmin: .EQUATE 40
 sautok: .ASCII  "Vous pouvez sauter en parachute\n\x00"
 erreur: .ASCII  "Vous ne pouvez pas sauter en parachute\n\x00"
 .END
