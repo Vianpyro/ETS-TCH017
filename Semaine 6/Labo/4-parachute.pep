@@ -1,4 +1,4 @@
-; Comparaison de deux valeurs
+; Verification de l'age et du poids pour savoir si quelqu'un peut sauter en parachute
 
         DECI    nb1, d          ; Lecture du premier entier
         DECI    nb2, d          ; Lecture du deuxieme entier
