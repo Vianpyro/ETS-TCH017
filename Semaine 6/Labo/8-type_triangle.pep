@@ -37,9 +37,9 @@ absd12y: NEGA                   ; Chagement de signe de la valeur dans l'accumul
         BR      fnclc12         ; Envoi vers la fin des tests
 
 ; Calcul de la somme D12 et stockage dans la variable appropriee
-fnclc12:LDA     tempx, d
-        ADDA    tempy, d
-        STA     D12, d
+fnclc12:LDA     tempx, d        ; Chargement somme en x
+        ADDA    tempy, d        ; Ajout de la somme en y
+        STA     D12, d          ; Stockage dans la variable correspondante
 
 ;
 ; Calcul du D23
@@ -71,9 +71,9 @@ absd23y: NEGA                   ; Chagement de signe de la valeur dans l'accumul
         BR      fnclc23         ; Envoi vers la fin des tests
 
 ; Calcul de la somme D23 et stockage dans la variable appropriee
-fnclc23:LDA     tempx, d
-        ADDA    tempy, d
-        STA     D23, d
+fnclc23:LDA     tempx, d        ; Chargement somme en x
+        ADDA    tempy, d        ; Ajout de la somme en y
+        STA     D23, d          ; Stockage dans la variable correspondante
 
 ;
 ; Calcul du D31
@@ -105,9 +105,9 @@ absd31y: NEGA                   ; Chagement de signe de la valeur dans l'accumul
         BR      fnclc31         ; Envoi vers la fin des tests
 
 ; Calcul de la somme D31 et stockage dans la variable appropriee
-fnclc31:LDA     tempx, d
-        ADDA    tempy, d
-        STA     D31, d
+fnclc31:LDA     tempx, d        ; Chargement somme en x
+        ADDA    tempy, d        ; Ajout de la somme en y
+        STA     D31, d          ; Stockage dans la variable correspondante
 
 ;
 ; Affichage des distances de Manhattan (assert: 0  0  1  3  3  1  ==>  4  4  4)
