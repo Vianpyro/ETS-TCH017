@@ -16,11 +16,8 @@ calcd12:LDA     d2x, d          ; Chargement de la valeur x du second sommet
         LDA     d2y, d          ; Chargement de la valeur y du second sommet
         SUBA    d1y, d          ; Soustraction  de la valeur y du premier sommet a celle du second
         STA     tempy, d        ; Stockage de la valeur calculee
-
-        ; Valeur absolue en x
         LDA     tempx, d        ; Chargement de la somme des valeurs x et comparaison a 0
         BRLT    absd12x         ; Si negatif envoi vers la fonction "abs"
-
         BR      clcd12y         ; Envoi vers la fonction de test de la somme des valeurs y
 
 absd12x:NEGA                    ; Changement de signe de la valeur dans l'accumulateur (somme x)
@@ -49,11 +46,8 @@ calcd23:LDA     d3x, d          ; Chargement de la valeur x du troisieme sommet
         LDA     d3y, d          ; Chargement de la valeur y du troisieme sommet
         SUBA    d2y, d          ; Soustraction  de la valeur y du second sommet a celle du troisieme
         STA     tempy, d        ; Stockage de la valeur calculee
-
-        ; Valeur absolue en x
         LDA     tempx, d        ; Chargement de la somme des valeurs x et comparaison a 0
         BRLT    absd23x         ; Si negatif envoi vers la fonction "abs"
-
         BR      clcd23y         ; Envoi vers la fonction de test de la somme des valeurs y
 
 absd23x:NEGA                    ; Changement de signe de la valeur dans l'accumulateur (somme x)
@@ -82,11 +76,8 @@ calcd31:LDA     d1x, d          ; Chargement de la valeur x du premier sommet
         LDA     d1y, d          ; Chargement de la valeur y du premier sommet
         SUBA    d3y, d          ; Soustraction  de la valeur y du troisieme sommet a celle du premier
         STA     tempy, d        ; Stockage de la valeur calculee
-
-        ; Valeur absolue en x
         LDA     tempx, d        ; Chargement de la somme des valeurs x et comparaison a 0
         BRLT    absd31x         ; Si negatif envoi vers la fonction "abs"
-
         BR      clcd31y         ; Envoi vers la fonction de test de la somme des valeurs y
 
 absd31x:NEGA                    ; Changement de signe de la valeur dans l'accumulateur (somme x)
@@ -111,10 +102,15 @@ fnclc31:LDA     tempx, d        ; Chargement somme en x
 ;
 test1:  LDA     D12, d          ; Chargement de la distance de Manhattan entre les sommets 1 et 2
         SUBA    D23, d          ; Soustraction par la distance de Manhattan entre les sommets 2 et 3
-        BREQ    test2           ; Si egal le triangle est isocele, aller a la suite de la verification
-        BR      isscal          ; Sinon aller a la verification suivante
+        BREQ    test3           ; Si egal le triangle est isocele, aller a la derniere verification
+        BR      test2           ; Sinon aller a la verification suivante
 
-test2:  LDA     D12, d          ; Verification du troisieme cote
+test2:  LDA     D23, d          ; Chargement de la distance de Manhattan entre les sommets 2 et 3
+        SUBA    D31, d          ; Soustraction par la distance de Manhattan entre les sommets 3 et 1
+        BREQ    isiso           ; Pas equilateral mais isocele
+        BR      isscal          ; Aucun des cote n'est egal a un autre
+
+test3:  LDA     D12, d          ; Verification du troisieme cote
         SUBA    D31, d          ; Soustraction par la distance de Manhattan entre les sommets 3 et 1
         BREQ    isequi          ; Le triangle est equilateral
         BR      isiso           ; Sinon le triangle est isocele
