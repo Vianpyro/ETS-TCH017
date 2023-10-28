@@ -155,7 +155,7 @@ D31:    .WORD   0               ; Sommets 3 et 1
 
 ; Constantes d'affichage de message
 msg_eqi:.ASCII  "Le triangle est equilateral.\n\x00"
-msg_iso:.ASCII  "Le triange est isocele.\n\x00"
-msg_scl:.ASCII  "Le triange est scalene.\n\x00"
+msg_iso:.ASCII  "Le triangle est isocele.\n\x00"
+msg_scl:.ASCII  "Le triangle est scalene.\n\x00"
 
 .END
