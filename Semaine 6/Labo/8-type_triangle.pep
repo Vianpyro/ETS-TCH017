@@ -32,7 +32,7 @@ clcd12y:LDA     tempy, d        ; Chargement de la somme des valeurs y et compar
         BRLT    absd12y         ; Si negatif envoi vers la fonction "abs"
         BR      fnclc12         ; Envoi vers la fin des tests
 
-absd12y: NEGA                   ; Chagement de signe de la valeur dans l'accumulateur (somme y)
+absd12y:NEGA                    ; Chagement de signe de la valeur dans l'accumulateur (somme y)
         STA     tempy, d        ; Stockage de la valeur changee
         BR      fnclc12         ; Envoi vers la fin des tests
 
@@ -66,7 +66,7 @@ clcd23y:LDA     tempy, d        ; Chargement de la somme des valeurs y et compar
         BRLT    absd23y         ; Si negatif envoi vers la fonction "abs"
         BR      fnclc23         ; Envoi vers la fin des tests
 
-absd23y: NEGA                   ; Chagement de signe de la valeur dans l'accumulateur (somme y)
+absd23y:NEGA                    ; Chagement de signe de la valeur dans l'accumulateur (somme y)
         STA     tempy, d        ; Stockage de la valeur changee
         BR      fnclc23         ; Envoi vers la fin des tests
 
@@ -100,7 +100,7 @@ clcd31y:LDA     tempy, d        ; Chargement de la somme des valeurs y et compar
         BRLT    absd31y         ; Si negatif envoi vers la fonction "abs"
         BR      fnclc31         ; Envoi vers la fin des tests
 
-absd31y: NEGA                   ; Chagement de signe de la valeur dans l'accumulateur (somme y)
+absd31y:NEGA                    ; Chagement de signe de la valeur dans l'accumulateur (somme y)
         STA     tempy, d        ; Stockage de la valeur changee
         BR      fnclc31         ; Envoi vers la fin des tests
 
@@ -110,17 +110,34 @@ fnclc31:LDA     tempx, d        ; Chargement somme en x
         STA     D31, d          ; Stockage dans la variable correspondante
 
 ;
-; Affichage des distances de Manhattan (assert: 0  0  1  3  3  1  ==>  4  4  4)
+; Verification du nombre de cotes de meme longueur
 ;
-        DECO    D12, d
-        CHARO   '\n', i
-        DECO    D23, d
-        CHARO   '\n', i
-        DECO    D31, d
-        CHARO   '\n', i
+test1:  LDA     D12, d          ; Chargement de la distance de Manhattan entre les sommets 1 et 2
+        SUBA    D23, d          ; Soustraction par la distance de Manhattan entre les sommets 2 et 3
+        BREQ    test2           ; Si egal le triangle est isocele, aller a la suite de la verification
+        BR      isscal          ; Sinon aller a la verification suivante
 
+test2:  LDA     D12, d          ; Verification du troisieme cote
+        SUBA    D31, d          ; Soustraction par la distance de Manhattan entre les sommets 3 et 1
+        BREQ    isequi          ; Le triangle est equilateral
+        BR      isiso           ; Sinon le triangle est isocele
 
-end:    STOP
+;
+; Affichage du type de triange
+;
+isequi: STRO    msg_eqi, d
+        BR      fin
+
+isiso:  STRO    msg_iso, d
+        BR      fin
+
+isscal: STRO    msg_scl, d
+        BR      fin
+
+;
+; Fin du programme
+;
+fin:    STOP
 
 ; Variables de coordonnees
 d1x:    .WORD   0               ; Coordonnee x du premier sommet
@@ -138,5 +155,10 @@ tempy:  .WORD   0
 D12:    .WORD   0               ; Sommets 1 et 2
 D23:    .WORD   0               ; Sommets 2 et 3
 D31:    .WORD   0               ; Sommets 3 et 1
+
+; Constantes d'affichage de message
+msg_eqi:.ASCII  "Le triangle est equilateral.\n\x00"
+msg_iso:.ASCII  "Le triange est isocele.\n\x00"
+msg_scl:.ASCII  "Le triange est scalene.\n\x00"
 
 .END
