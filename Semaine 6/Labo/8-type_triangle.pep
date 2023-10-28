@@ -10,7 +10,6 @@
 ;
 ; Calcul du D12
 ;
-
 calcd12:LDA     d2x, d          ; Chargement de la valeur x du second sommet
         SUBA    d1x, d          ; Soustraction de la valeur x du premier sommet a celle du second
         STA     tempx, d        ; Stockage de la valeur calculee
@@ -44,7 +43,6 @@ fnclc12:LDA     tempx, d        ; Chargement somme en x
 ;
 ; Calcul du D23
 ;
-
 calcd23:LDA     d3x, d          ; Chargement de la valeur x du troisieme sommet
         SUBA    d2x, d          ; Soustraction de la valeur x du second sommet a celle du troisieme
         STA     tempx, d        ; Stockage de la valeur calculee
@@ -78,7 +76,6 @@ fnclc23:LDA     tempx, d        ; Chargement somme en x
 ;
 ; Calcul du D31
 ;
-
 calcd31:LDA     d1x, d          ; Chargement de la valeur x du premier sommet
         SUBA    d3x, d          ; Soustraction de la valeur x du troisieme sommet a celle du premier
         STA     tempx, d        ; Stockage de la valeur calculee
