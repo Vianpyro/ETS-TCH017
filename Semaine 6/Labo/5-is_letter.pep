@@ -1,5 +1,4 @@
 ; Verification de si un caractere est une lettre ou non
-        ; LDA     0x0000  , i     ; Initialisation du registre
         CHARI   char    , d     ; Lecture du caractere
 
 ;
