@@ -1,9 +1,6 @@
 ; Verification de si un caractere est une lettre ou non
         CHARI   char    , d     ; Lecture du caractere
 
-;
-; Verification 1 des majuscules - On verifie si c'est "avant A"
-;
         LDBYTEA char    , d     ; Chargement du caractere dans l'accumulateur
         CPA     a_maj   , i     ; Comparaison avec 'A'
         BRLT    paschar         ; < 'A' donc pas un caractere
