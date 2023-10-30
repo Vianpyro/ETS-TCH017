@@ -1,4 +1,5 @@
 ; Affichage des nombres pairs entre 0 et une limite donnee
+
         DECI    limite  , d     ; Sauvegarde de la limite
         DECO    0       , i     ; Affichage du 0 (sans espace avant)
 
