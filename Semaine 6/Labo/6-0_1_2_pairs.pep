@@ -7,11 +7,11 @@
 ; Verification de la parite
 ;
         LDA     num1    , d     ; Chargement de la premiere valeur dans l'accumulateur
-        ANDA    0x0001  , i     ; ET Binaire avec 1
+        ANDA    1       , i     ; ET Binaire avec 1
         STA     pair1   , d     ; Stockage du resultat dans la variable prevue pour
         
         LDA     num2    , d     ; Chargement de la deuxieme valeur dans l'accumulateur
-        ANDA    0x0001  , i     ; ET Binaire avec 1
+        ANDA    1       , i     ; ET Binaire avec 1
         STA     pair2   , d     ; Stockage du resultat dans la variable prevue pour
 
 ;
