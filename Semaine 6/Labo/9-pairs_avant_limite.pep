@@ -6,10 +6,11 @@ for:    LDA     iter    , d     ; Chargement de l'iterateur
         CPA     limite  , d     ; Comparaison avec la limite
         BRGT    endfor          ; Si la limite est depassee aller a la fin
 
+        ; Affichage des valeurs paires
         if:     ANDA    1       , i     ; ET binaire pour verifier la parite
                 BRNE    endif
                 CHARO   ' '     , i
-                DECO    iter    , d     ; Affichage (temporaire)
+                DECO    iter    , d
 
         endif:  NOP0
 
