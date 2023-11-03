@@ -4,8 +4,7 @@
         LDA     valeur  , d     ; Chargement de la valeur
         STA     copie   , d     ; Stockage d'une copie pour l'affichage final
 
-while:  LDA     valeur  , d     ; Chargement de la valeur
-        CPA     0       , i     ; Comparaison avec 0
+while:  LDA     valeur  , d     ; Chargement de la valeur et comparaison avec 0
         BREQ    affiche         ; Si la valeur est nulle, le programme est fini
 
         ; Si modulo 2 == bitsrch ajouter 1 au nombre de bits
