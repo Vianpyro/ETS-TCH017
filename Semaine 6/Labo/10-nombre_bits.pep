@@ -35,7 +35,7 @@ fin: STOP
 
 valeur: .WORD   0
 copie:  .WORD   0
-bitsrch:.EQUATE 0               ; Definition du bit recherche (0 ou 1)
+bitsrch:.EQUATE 1               ; Definition du bit recherche (0 ou 1)
 nb_bits:.WORD   0               ; Variable de compte du nombre de bits
 msg_1:  .ASCII  "Il y'a \x00"
 msg_2:  .ASCII  " bits valant '\x00"
