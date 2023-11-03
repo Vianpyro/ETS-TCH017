@@ -22,8 +22,8 @@ while:  LDA     valeur  , d     ; Chargement de la valeur
         LDA     valeur  , d     ; Chargement de la valeur
         ASRA                    ; Division par deux
         STA     valeur  , d     ; Mise a jour de la variable
+        
         BR      while           ; Retour au debut de la boucle
-
 
 affiche:STRO    msg_1   , d
         DECO    nb_bits , d
