@@ -2,11 +2,11 @@
 a:      .EQUATE 10
 b:      .EQUATE 20
 
-main:   SUBSP   2       , i
+main:   SUBSP   2       , i     ; Empiler b
         LDA     20      , i
         STA     0       , s
 
-        SUBSP   2       , i
+        SUBSP   2       , i     ; Empiler a
         LDA     10      , i
         STA     0       , s
 
