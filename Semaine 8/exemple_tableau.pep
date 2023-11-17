@@ -1,7 +1,7 @@
 ; Exemple de programme de tableau
 
-        ; Initialisation index
-        LDX     0
+        ; Initialisation de l'index (registre)
+        LDX     0       , i
 
 main:   NOP0
 
