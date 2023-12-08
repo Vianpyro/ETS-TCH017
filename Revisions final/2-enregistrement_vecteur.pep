@@ -22,6 +22,16 @@ main:   SUBSP   6       , i     ; Allouer 6 octets
 
 STOP
 
+z_ret:  .EQUATE 2
+z_siz:  .EQUATE 4
+
+malloc: LDA     ptr_tas , d     ; Charger l'adresse courante du tas
+        STA     z_ret   , s     ; Ranger l'adresse courante pour le retour
+        ADDA    z_siz   , s     ; Déplacer le pointeur du tas
+        STA     ptr_tas , d     ; Mettre à jour le pointeur du tas
+
+        RET0
+
 b_ptr:  .EQUATE 0       ; Le pointeur retourne par malloc
 b_siz:  .EQUATE 2       ; Le nombre d'octets à reserver
 b_ret:  .EQUATE 6       ; La valeur de retour
