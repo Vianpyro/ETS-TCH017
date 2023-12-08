@@ -1,7 +1,7 @@
 BR      main
 
 ;
-; Programma principal
+; Programme principal
 ;
 
 x:      .WORD   15      ; Valeur pour les operations
