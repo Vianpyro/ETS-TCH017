@@ -8,7 +8,7 @@ x:      .WORD   15      ; Valeur pour les operations
 
 main:   SUBSP   2       , i     ; Reservation de deux octets de memoire pour la valeur `x`
 
-        LDA     x       , d     ; Chargement de la valeur `x`
+        LDA     x       , i     ; Chargement de la valeur `x`
         STA     0       , s     ; Stockage dans le stack
         DECO    x       , d     ; Affichage de la valeur avant l'operation
         CHARO   '\n'    , i     ; Ajout d'un espace pour la lisibilite
