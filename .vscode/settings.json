@@ -1,0 +1,21 @@
+{
+    "[pep8-asm]": {
+        "editor.rulers": [
+            8,
+            16,
+            24,
+            32,
+            40,
+            48,
+            56,
+            64
+        ],
+        "editor.tabSize": 8,
+        "editor.wordBasedSuggestions": "off"
+    },
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true
+}
