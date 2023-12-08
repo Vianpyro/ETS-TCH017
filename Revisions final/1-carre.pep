@@ -37,3 +37,5 @@ carre:  LDA     0       , i
         a_end:  STA     a_ptr   , sf    ; Stocker la valeur final
 
         RET0
+
+.END
