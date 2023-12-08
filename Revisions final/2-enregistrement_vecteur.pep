@@ -32,7 +32,7 @@ v_init: SUBSP   4       , i     ; Allouer la memoire
 
         ; Charger le sizeof dans l'accumulateur
         LDA     sizeof  , i
-        STA     b_siz,  , s
+        STA     b_siz   , s
 
         ; Allocation dynamique pour sizeof bytes
         CALL    malloc
