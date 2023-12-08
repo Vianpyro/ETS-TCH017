@@ -25,7 +25,7 @@ STOP
 z_ret:  .EQUATE 2
 z_siz:  .EQUATE 4
 tas:    .BLOCK  1
-ptr_tas:.ADDRSS tas ; Adresse du prochain octet de libre dans le tas
+ptr_tas:.ADDRSS tas     ; Adresse du prochain octet de libre dans le tas
 
 malloc: LDA     ptr_tas , d     ; Charger l'adresse courante du tas
         STA     z_ret   , s     ; Ranger l'adresse courante pour le retour
